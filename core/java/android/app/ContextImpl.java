@@ -70,6 +70,8 @@ import android.net.wifi.IWifiManager;
 import android.net.wifi.WifiManager;
 import android.net.wifi.p2p.IWifiP2pManager;
 import android.net.wifi.p2p.WifiP2pManager;
+import android.net.wimax.WimaxHelper;
+import android.net.wimax.WimaxManagerConstants;
 import android.nfc.NfcManager;
 import android.os.Binder;
 import android.os.Bundle;
@@ -529,6 +531,11 @@ class ContextImpl extends Context {
                 IUserManager service = IUserManager.Stub.asInterface(b);
                 return new UserManager(ctx, service);
             }});
+
+        registerService(WimaxManagerConstants.WIMAX_SERVICE, new ServiceFetcher() {
+                public Object createService(ContextImpl ctx) {
+                    return WimaxHelper.createWimaxService(ctx, ctx.mMainThread.getHandler());
+                }});
 
         registerService(APP_OPS_SERVICE, new ServiceFetcher() {
             public Object createService(ContextImpl ctx) {
