@@ -747,7 +747,7 @@ class ContextImpl extends Context {
         parent.mkdir();
         FileUtils.setPermissions(
             parent.getPath(),
-            FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+            FileUtils.S_IRWXU|FileUtils.S_IXOTH,
             -1, -1);
         FileOutputStream fos = new FileOutputStream(f, append);
         setFilePermissionsFromMode(f.getPath(), mode, 0);
@@ -773,7 +773,7 @@ class ContextImpl extends Context {
                 }
                 FileUtils.setPermissions(
                         mFilesDir.getPath(),
-                        FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+                        FileUtils.S_IRWXU|FileUtils.S_IXOTH,
                         -1, -1);
             }
             return mFilesDir;
@@ -836,7 +836,7 @@ class ContextImpl extends Context {
                 }
                 FileUtils.setPermissions(
                         mCacheDir.getPath(),
-                        FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+                        FileUtils.S_IRWXU|FileUtils.S_IXOTH,
                         -1, -1);
             }
         }
@@ -1880,7 +1880,7 @@ class ContextImpl extends Context {
         if (!file.exists()) {
             file.mkdir();
             setFilePermissionsFromMode(file.getPath(), mode,
-                    FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH);
+                    FileUtils.S_IRWXU|FileUtils.S_IXOTH);
         }
         return file;
     }
@@ -1984,7 +1984,6 @@ class ContextImpl extends Context {
     static void setFilePermissionsFromMode(String name, int mode,
             int extraPermissions) {
         int perms = FileUtils.S_IRUSR|FileUtils.S_IWUSR
-            |FileUtils.S_IRGRP|FileUtils.S_IWGRP
             |extraPermissions;
         if ((mode&MODE_WORLD_READABLE) != 0) {
             perms |= FileUtils.S_IROTH;
@@ -2015,7 +2014,7 @@ class ContextImpl extends Context {
 
         if (createDirectory && !dir.isDirectory() && dir.mkdir()) {
             FileUtils.setPermissions(dir.getPath(),
-                FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+                FileUtils.S_IRWXU|FileUtils.S_IXOTH,
                 -1, -1);
         }
 

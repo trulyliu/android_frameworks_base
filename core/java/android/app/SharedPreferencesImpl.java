@@ -549,7 +549,7 @@ final class SharedPreferencesImpl implements SharedPreferences {
             }
             FileUtils.setPermissions(
                 parent.getPath(),
-                FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+                FileUtils.S_IRWXU|FileUtils.S_IXOTH,
                 -1, -1);
             try {
                 str = new FileOutputStream(file);
