@@ -880,6 +880,8 @@
   <java-symbol type="string" name="owner_name" />
   <java-symbol type="string" name="policylab_enforceSelinux" />
   <java-symbol type="string" name="policydesc_enforceSelinux" />
+  <java-symbol type="string" name="policylab_enforceMmac" />
+  <java-symbol type="string" name="policydesc_enforceMmac" />
   <java-symbol type="string" name="config_chooseAccountActivity" />
   <java-symbol type="string" name="config_chooseTypeAndAccountActivity" />
   <java-symbol type="string" name="config_appsAuthorizedForSharedAccounts" />
