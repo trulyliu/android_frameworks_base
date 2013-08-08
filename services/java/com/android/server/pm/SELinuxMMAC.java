@@ -532,4 +532,61 @@ public final class SELinuxMMAC {
         // If we get here it's because this package had no policy.
         return false;
     }
+
+	 /**
+	* Labels a package based on an seinfo tag from install policy.
+	* The label is attached to the ApplicationInfo instance of the package.
+	* @param PackageParser.Package object representing the package
+	* to labeled.
+	* @return String holding the value of the seinfo label that was assigned.
+	* Value may be null which indicates no seinfo label was assigned.
+	*/
+	
+	public static void assignSeinfoValue(PackageParser.Package pkg) {
+
+		/*
+	* Non system installed apps should be treated the same. This
+	* means that any post-loaded apk will be assigned the default
+	* tag, if one exists in the policy, else null, without respect
+	* to the signing key.
+	*/
+	/*
+        if (((pkg.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) ||
+            ((pkg.applicationInfo.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0)) {
+
+            // We just want one of the signatures to match.
+            for (Signature s : pkg.mSignatures) {
+                if (s == null)
+                    continue;
+
+                if (sSigSeinfo.containsKey(s)) {
+                    String seinfo = pkg.applicationInfo.seinfo = sSigSeinfo.get(s);
+                    if (DEBUG_POLICY_INSTALL)
+                        Slog.i(TAG, "package (" + pkg.packageName +
+                               ") labeled with seinfo=" + seinfo);
+
+                    return;
+                }
+            }
+
+            // Check for seinfo labeled by package.
+            if (sPackageSeinfo.containsKey(pkg.packageName)) {
+                String seinfo = pkg.applicationInfo.seinfo = sPackageSeinfo.get(pkg.packageName);
+                if (DEBUG_POLICY_INSTALL)
+                    Slog.i(TAG, "package (" + pkg.packageName +
+                           ") labeled with seinfo=" + seinfo);
+                return;
+            }
+         
+        }
+	
+        // If we have a default seinfo value then great, otherwise
+        // we set a null object and that is what we started with.
+        String seinfo = pkg.applicationInfo.seinfo = sSigSeinfo.get(null);
+        if (DEBUG_POLICY_INSTALL)
+            Slog.i(TAG, "package (" + pkg.packageName +
+                   ") labeled with seinfo=" + (seinfo == null ? "null" : seinfo));
+    }
+    */
+    }
 }
