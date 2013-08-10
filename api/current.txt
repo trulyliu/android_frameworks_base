@@ -6085,6 +6085,7 @@ package android.content {
     field public static final java.lang.String ACTION_MEDIA_UNMOUNTED = "android.intent.action.MEDIA_UNMOUNTED";
     field public static final java.lang.String ACTION_MY_PACKAGE_REPLACED = "android.intent.action.MY_PACKAGE_REPLACED";
     field public static final java.lang.String ACTION_NEW_OUTGOING_CALL = "android.intent.action.NEW_OUTGOING_CALL";
+    field public static final java.lang.String ACTION_NEW_OUTGOING_SMS = "android.intent.action.NEW_OUTGOING_SMS";
     field public static final java.lang.String ACTION_PACKAGE_ADDED = "android.intent.action.PACKAGE_ADDED";
     field public static final java.lang.String ACTION_PACKAGE_CHANGED = "android.intent.action.PACKAGE_CHANGED";
     field public static final java.lang.String ACTION_PACKAGE_DATA_CLEARED = "android.intent.action.PACKAGE_DATA_CLEARED";
@@ -10129,7 +10130,6 @@ package android.hardware {
     method public int getJpegQuality();
     method public int getJpegThumbnailQuality();
     method public android.hardware.Camera.Size getJpegThumbnailSize();
-    method public java.lang.String getPowerMode();
     method public int getMaxExposureCompensation();
     method public int getMaxNumDetectedFaces();
     method public int getMaxNumFocusAreas();
@@ -10139,6 +10139,7 @@ package android.hardware {
     method public int getMinExposureCompensation();
     method public int getPictureFormat();
     method public android.hardware.Camera.Size getPictureSize();
+    method public java.lang.String getPowerMode();
     method public android.hardware.Camera.Size getPreferredPreviewSizeForVideo();
     method public int getPreviewFormat();
     method public void getPreviewFpsRange(int[]);
