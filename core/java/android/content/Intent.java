@@ -2292,13 +2292,6 @@ public class Intent implements Parcelable, Cloneable {
     public static final String ACTION_ADVANCED_SETTINGS_CHANGED
             = "android.intent.action.ADVANCED_SETTINGS";
 
-
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_NEW_OUTGOING_SMS =
-            "android.intent.action.NEW_OUTGOING_SMS";
-
-
-
     /**
      * Broadcast Action: An outgoing call is about to be placed.
      *
