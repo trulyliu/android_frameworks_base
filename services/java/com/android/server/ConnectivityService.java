@@ -4091,7 +4091,7 @@ public class ConnectivityService extends IConnectivityManager.Stub {
     private String getMobileRedirectedProvisioningUrl() {
         String url = getProvisioningUrlBaseFromFile(REDIRECTED_PROVISIONING);
         if (TextUtils.isEmpty(url)) {
-            url = mContext.getResources().getString(R.string.mobile_redirected_provisioning_url);
+            url = "false";
         }
         return url;
     }
@@ -4100,7 +4100,7 @@ public class ConnectivityService extends IConnectivityManager.Stub {
         enforceConnectivityInternalPermission();
         String url = getProvisioningUrlBaseFromFile(PROVISIONING);
         if (TextUtils.isEmpty(url)) {
-            url = mContext.getResources().getString(R.string.mobile_provisioning_url);
+            url = "http://google.com";
             log("getProvisioningUrl: mobile_provisioining_url from resource =" + url);
         } else {
             log("getProvisioningUrl: mobile_provisioning_url from File =" + url);
