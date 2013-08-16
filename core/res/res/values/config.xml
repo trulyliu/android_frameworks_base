@@ -250,6 +250,15 @@
     -->
     </string-array>
 
+    <!-- The default mobile provisioning url. Empty by default, maybe overridden by
+         an mcc/mnc specific config.xml -->
+    <string name="mobile_provisioning_url" translatable="false"></string>
+
+    <!-- This url is used as the default url when redirection is detected. Any
+         should work as all url's get redirected. But maybe overridden by
+         if needed. -->
+    <string name="mobile_redirected_provisioning_url" translatable="false">http://google.com</string>
+
     <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
     <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
