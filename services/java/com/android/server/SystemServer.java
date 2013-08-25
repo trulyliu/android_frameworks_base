@@ -777,18 +777,7 @@ class ServerThread extends Thread {
                     Slog.e(TAG, "Failure starting Irda Service", e);
                 }
             }
-
-
-            if (context.getResources().getBoolean(
-                    com.android.internal.R.bool.config_allowPieService)) {
-                try {
-                    Slog.i(TAG, "Pie Delivery Service");
-                    pieService = new PieService(context, wm, inputManager);
-                    ServiceManager.addService("pieservice", pieService);
-                } catch (Throwable e) {
-                    Slog.e(TAG, "Failure starting Pie Delivery Service Service", e);
-                }
-            }
+     
         }
 
         // Before things start rolling, be sure we have decided whether
