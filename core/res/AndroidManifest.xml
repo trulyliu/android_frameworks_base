@@ -599,7 +599,8 @@
         android:label="@string/permlab_accessLocationExtraCommands"
         android:description="@string/permdesc_accessLocationExtraCommands" />
 
-    <!-- Allows an application to install a location provider into the Location Manager -->
+    <!-- Allows an application to install a location provider into the Location Manager 
+         @hide -->
     <permission android:name="android.permission.INSTALL_LOCATION_PROVIDER"
         android:protectionLevel="signature|system"
         android:label="@string/permlab_installLocationProvider"
