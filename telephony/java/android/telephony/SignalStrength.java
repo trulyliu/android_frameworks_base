@@ -28,7 +28,7 @@ import android.util.Log;
 public class SignalStrength implements Parcelable {
 
     private static final String LOG_TAG = "SignalStrength";
-    private static final boolean DBG = false;
+    private static final boolean DBG = true;
 
     /** @hide */
     public static final int SIGNAL_STRENGTH_NONE_OR_UNKNOWN = 0;
@@ -260,6 +260,7 @@ public class SignalStrength implements Parcelable {
         if (DBG) log("Size of signalstrength parcel:" + in.dataSize());
 
         mGsmSignalStrength = in.readInt();
+        if (mGsmSignalStrength == 99) mGsmSignalStrength = 5;	// FIXME: 
         mGsmBitErrorRate = in.readInt();
         mCdmaDbm = in.readInt();
         mCdmaEcio = in.readInt();

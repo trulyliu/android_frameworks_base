@@ -2018,6 +2018,9 @@ public final class BatteryStatsImpl extends BatteryStats {
                 case TelephonyManager.NETWORK_TYPE_HSPAP:
                     bin = DATA_CONNECTION_HSPAP;
                     break;
+                case TelephonyManager.NETWORK_TYPE_TDSCDMA:
+                    bin = DATA_CONNECTION_TDSCDMA;
+                    break;
                 case TelephonyManager.NETWORK_TYPE_DCHSPAP:
                     bin = DATA_CONNECTION_DCHSPAP;
                     break;
