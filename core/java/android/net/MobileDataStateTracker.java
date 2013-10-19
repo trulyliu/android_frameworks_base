@@ -181,16 +181,9 @@ public class MobileDataStateTracker implements NetworkStateTracker {
                     log(String.format("Broadcast received: ACTION_ANY_DATA_CONNECTION_STATE_CHANGED"
                         + "mApnType=%s %s received apnType=%s", mApnType,
                         TextUtils.equals(apnType, mApnType) ? "==" : "!=", apnType));
-
                 }
                 if (!TextUtils.equals(apnType, mApnType)) {
                     return;
-                }
-
-                // Assume this isn't a provisioning network.
-                mNetworkInfo.setIsConnectedToProvisioningNetwork(false);
-                if (DBG) {
-                    log("Broadcast received: " + intent.getAction() + " apnType=" + apnType);
                 }
 
                 int oldSubtype = mNetworkInfo.getSubtype();
@@ -286,8 +279,6 @@ public class MobileDataStateTracker implements NetworkStateTracker {
                     }
                     return;
                 }
-                // Assume this isn't a provisioning network.
-                mNetworkInfo.setIsConnectedToProvisioningNetwork(false);
                 String reason = intent.getStringExtra(PhoneConstants.FAILURE_REASON_KEY);
                 String apnName = intent.getStringExtra(PhoneConstants.DATA_APN_KEY);
                 if (DBG) {
@@ -659,3 +650,4 @@ public class MobileDataStateTracker implements NetworkStateTracker {
         Slog.e(TAG, s);
     }
 }
+
