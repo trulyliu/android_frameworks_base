@@ -92,7 +92,7 @@ static jlong android_os_Debug_getNativeHeapSize(JNIEnv *env, jobject clazz)
 {
 #ifdef HAVE_MALLOC_H
     struct mallinfo info = mallinfo();
-    return (jlong) info.usmblks;
+    return (jlong) (info.uordblks + info.fordblks);
 #else
     return -1;
 #endif
