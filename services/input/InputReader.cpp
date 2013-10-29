@@ -3012,7 +3012,7 @@ void TouchInputMapper::configureSurface(nsecs_t when, bool* outResetNeeded) {
     }
 
     // If moving between pointer modes, need to reset some state.
-    bool deviceModeChanged;
+    bool deviceModeChanged = false;
     if (mDeviceMode != oldDeviceMode) {
         deviceModeChanged = true;
         mOrientedRanges.clear();
