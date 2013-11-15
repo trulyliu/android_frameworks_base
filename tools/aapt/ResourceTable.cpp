@@ -2589,16 +2589,17 @@ ResourceTable::validateLocalizations(void)
          nameIter++) {
         const set<String8>& configSet = nameIter->second;   // naming convenience
 
+       
         // Look for strings with no default localization
         if (configSet.count(defaultLocale) == 0) {
-            fprintf(stdout, "aapt: warning: string '%s' has no default translation in %s; found:",
-                    String8(nameIter->first).string(), mBundle->getResourceSourceDirs()[0]);
+           // fprintf(stdout, "aapt: warning: string '%s' has no default translation in %s; found:",
+           //         String8(nameIter->first).string(), mBundle->getResourceSourceDirs()[0]);
             for (set<String8>::const_iterator locales = configSet.begin();
                  locales != configSet.end();
                  locales++) {
-                fprintf(stdout, " %s", (*locales).string());
+            //    fprintf(stdout, " %s", (*locales).string());
             }
-            fprintf(stdout, "\n");
+           // fprintf(stdout, "\n");
             // !!! TODO: throw an error here in some circumstances
         }
 
@@ -2618,7 +2619,7 @@ ResourceTable::validateLocalizations(void)
                     config.setTo(start);
                 }
 
-                // don't bother with the pseudolocale "zz_ZZ"
+  /**              // don't bother with the pseudolocale "zz_ZZ"
                 if (config != "zz_ZZ") {
                     if (configSet.find(config) == configSet.end()) {
                         // okay, no specific localization found.  it's possible that we are
@@ -2629,8 +2630,8 @@ ResourceTable::validateLocalizations(void)
                         if (configSet.find(region) == configSet.end()) {
                             if (configSet.count(defaultLocale) == 0) {
                                 fprintf(stdout, "aapt: warning: "
-                                        "**** string '%s' has no default or required localization "
-                                        "for '%s' in %s\n",
+                                       "**** string '%s' has no default or required localization "
+                                       "for '%s' in %s\n",
                                         String8(nameIter->first).string(),
                                         config.string(),
                                         mBundle->getResourceSourceDirs()[0]);
@@ -2638,6 +2639,7 @@ ResourceTable::validateLocalizations(void)
                         }
                     }
                 }
+   **/
            } while (comma != NULL);
         }
     }
