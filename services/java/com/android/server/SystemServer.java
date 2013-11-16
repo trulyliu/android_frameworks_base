@@ -817,6 +817,7 @@ class ServerThread {
             } catch (Throwable e) {
                 reportWtf("starting Print Service", e);
             }
+          }
         }
 
         // Before things start rolling, be sure we have decided whether
