@@ -84,8 +84,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.IPowerManager;
 import android.os.IUserManager;
-import android.hardware.IIrdaManager;
-import android.hardware.IrdaManager;
 import android.os.Looper;
 import android.os.PowerManager;
 import android.os.Process;
@@ -589,13 +587,6 @@ class ContextImpl extends Context {
             public Object createService(ContextImpl ctx) {
                 return new ConsumerIrManager(ctx);
             }});
-
-        registerService(IRDA_SERVICE, new StaticServiceFetcher() {
-                public Object createStaticService() {
-                    IBinder b = ServiceManager.getService(IRDA_SERVICE);
-                    IIrdaManager service = IIrdaManager.Stub.asInterface(b);
-                    return new IrdaManager(service);
-                }});
     }
 
     static ContextImpl getImpl(Context context) {
