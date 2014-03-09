@@ -1778,4 +1778,5 @@
   <!-- Wifi -->
   <java-symbol type="bool" name="config_wifiApStartInterface" />
 
+  <java-symbol type="bool" name="use_motion_accel" />
 </resources>
